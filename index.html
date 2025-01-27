@@ -1,0 +1,522 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Arya's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Source Code Pro', monospace;
+      background-color: #0D0D0D;
+      color: #FFFFFF;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif;
+    }
+    .glitch {
+      position: relative;
+      color: #00FF00;
+      font-size: 2rem;
+      animation: glitch 1s infinite;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 red;
+      clip: rect(24px, 550px, 90px, 0);
+      animation: glitch-anim 2s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 blue;
+      clip: rect(85px, 550px, 140px, 0);
+      animation: glitch-anim2 2s infinite linear alternate-reverse;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+    @keyframes glitch-anim {
+      0% { clip: rect(24px, 550px, 90px, 0); }
+      50% { clip: rect(0, 550px, 44px, 0); }
+      100% { clip: rect(85px, 550px, 140px, 0); }
+    }
+    @keyframes glitch-anim2 {
+      0% { clip: rect(85px, 550px, 140px, 0); }
+      50% { clip: rect(0, 550px, 44px, 0); }
+      100% { clip: rect(24px, 550px, 90px, 0); }
+    }
+    .neon-button {
+      border: 2px solid #00FF00;
+      padding: 10px 20px;
+      color: #00FF00;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .neon-button:hover {
+      background-color: #00FF00;
+      color: #0D0D0D;
+    }
+    .neon-icon {
+      color: #00FF00;
+      transition: color 0.3s ease;
+    }
+    .neon-icon:hover {
+      color: #FF5555;
+    }
+    .glowing-border {
+      border: 2px solid #00FF00;
+      padding: 5px;
+      border-radius: 50%;
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 5px #00FF00; }
+      to { box-shadow: 0 0 20px #00FF00; }
+    }
+    .floating {
+      animation: float 3s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .radar {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px solid #00FF00;
+      animation: rotate 4s linear infinite;
+    }
+    .radar::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background: #00FF00;
+      transform-origin: 0 0;
+      animation: sweep 2s linear infinite;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes sweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<!-- Hero Section -->
+<section
+  class="min-h-screen flex flex-col justify-center items-center text-center relative overflow-hidden"
+  style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/bg.jpg'); background-size: cover; background-position: center;"
+>
+  <!-- Animated Headline -->
+  <div class="relative z-10">
+    <h1
+      class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug text-white tracking-wide animate-fade-in"
+    >
+      <span class="block animate-slide-in-top">👋 Hello, World!</span>
+      <span class="block mt-2 text-2xl md:text-3xl lg:text-4xl animate-slide-in-bottom">
+        I’m <span class="text-blue-400">Arya</span> <br />
+        <span class="text-green-400">Cybersecurity Specialist</span> | 
+        <span class="text-purple-400">Ethical Hacker</span> | 
+        <span class="text-red-400">Problem Solver</span>
+      </span>
+    </h1>
+
+    <!-- Animated Buttons -->
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a download="" href="assets\Pdf\Resume 2022.pdf" class="px-6 py-3 text-lg font-medium text-white bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+        📄 Access My Resume<i class="uil uil-file-download-alt button_icon"></i>
+      </a>
+      <a
+        href="https://github.com/Arya182-ui"
+        target="_blank"
+        class="px-6 py-3 text-lg font-medium text-white bg-gradient-to-r from-green-500 to-green-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+      >
+        🚀 Explore My GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Animated Icon -->
+  <div class="absolute bottom-10 right-10 animate-bounce">
+    <i class="fas fa-shield-alt text-6xl text-green-400"></i>
+  </div>
+</section>
+
+<!-- CSS for Animations -->
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-top {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-in-out;
+  }
+
+  .animate-slide-in-top {
+    animation: slide-in-top 1s ease-in-out;
+  }
+
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 1s ease-in-out;
+  }
+</style>
+  <!-- About Me Section -->
+  <section class="py-20 bg-gradient-to-r from-black via-gray-900 to-black text-center">
+    <div class="container mx-auto px-6 md:px-12">
+      <h2 class="text-5xl font-bold text-white mb-8">Who Am I?</h2>
+      <div class="bg-gray-800 p-8 rounded-xl shadow-2xl inline-block max-w-3xl">
+        <p class="text-green-400 text-lg font-mono">&gt; WhoAmI</p>
+        <p class="text-green-400 text-lg mb-4">&gt; Aspiring Security Consultant with a strong foundation in ethical hacking, cybersecurity, and innovative IoT security solutions. Currently pursuing a BTech degree in technology with a focus on cybersecurity and machine learning.</p>
+        <p class="text-green-400 text-lg mb-4">&gt; Passionate about securing the digital world and constantly testing new things to find vulnerabilities and improve security. I’ve worked on numerous cybersecurity projects and continue to expand my skill set with machine learning to enhance security measures.</p>
+        <p class="text-green-400 text-lg mb-4">&gt; Focused on integrating smart technologies like ESP32 and automating security processes with Python, I aim to create robust, scalable, and secure solutions to protect critical systems and networks.</p>
+        <p class="text-green-400 text-lg mb-4">&gt; As a cybersecurity enthusiast, I’m committed to helping businesses safeguard their digital infrastructure, from penetration testing to vulnerability management, ensuring a safer digital world.</p>
+        <p class="text-green-400 text-lg mb-4">&gt; Planning to expand my expertise in machine learning to apply AI-based solutions for predicting and mitigating security threats, aligned with the ever-evolving needs of the digital age.</p>
+      </div>
+      <div class="mt-10">
+        <img alt="A pixelated hacker profile picture with a glowing border" class="glowing-border mx-auto" height="160" width="200" src="assets\images\logo.jpg" width="150"/>
+      </div>
+      <div class="mt-10 flex justify-center space-x-4">
+        <div class="floating p-4 bg-gray-800 rounded-lg shadow-lg">
+          <p class="text-green-500">Penetration Testing</p>
+        </div>
+        <div class="floating p-4 bg-gray-800 rounded-lg shadow-lg">
+          <p class="text-green-500">Python Automation</p>
+        </div>
+        <div class="floating p-4 bg-gray-800 rounded-lg shadow-lg">
+          <p class="text-green-500">IoT Security</p>
+        </div>
+        <div class="floating p-4 bg-gray-800 rounded-lg shadow-lg">
+          <p class="text-green-500">Bug Bounties</p>
+        </div>
+        <div class="floating p-4 bg-gray-800 rounded-lg shadow-lg">
+          <p class="text-green-500">ESP32 Expertise</p>
+        </div>
+        <div class="floating p-4 bg-gray-800 rounded-lg shadow-lg">
+          <p class="text-green-500">Machine Learning for Security</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <section class="py-20 bg-black text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl mb-8">What I Do Best</h2>
+      <div class="relative mx-auto mb-10">
+        <div class="radar"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg">
+          <i class="fas fa-lock text-4xl text-green-500 mb-4"></i>
+          <p>Cybersecurity (95%)</p>
+          <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+            <div class="bg-green-500 h-2.5 rounded-full" style="width: 95%;"></div>
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg">
+          <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
+          <p>Python (90%)</p>
+          <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+            <div class="bg-green-500 h-2.5 rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg">
+          <i class="fas fa-bug text-4xl text-green-500 mb-4"></i>
+          <p>Penetration Testing (85%)</p>
+          <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+            <div class="bg-green-500 h-2.5 rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects Section -->
+  <section class="py-20 bg-black text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl mb-8">My Operations</h2>
+      <div class="mb-10">
+        <input class="bg-gray-800 text-green-500 p-2 rounded-lg w-full md:w-1/2" placeholder="&gt; Filter: Python | IoT | Penetration Testing | Devlopment" type="text"/>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Supriya An Desktop Assistant</h3>
+          <p>A powerful Python-based virtual assistant designed to streamline a variety of tasks and enhance productivity.</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/Supriya-An-desktop-assistant-">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Inviculter (A Farmer Helping App)</h3>
+          <p>A comprehensive consultation platform connecting farmers with agronomists, fostering collaboration and real-time decision-making.</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/INVICULTURE">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Advance Password Manager</h3>
+          <p>An advanced password manager built using Python and SQLite. Store passwords securely with encryption.</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/Password-Manager">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Voice Recognition Model</h3>
+          <p>A custom voice recognition model that supports various commands and integrates with other applications for enhanced automation.</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/Voice-Recognition-Model">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Network Scanner</h3>
+          <p>Python made a normaly scanner it scan all ports and provide open port</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/Network_Scanner">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Smart Attandance System</h3>
+          <p>A Smart Attandance System With Advanced Face Recognition Model</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/Smart_Attendance">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Face Recognition Model</h3>
+          <p>A face recognition model built with TensorFlow, Keras, and OpenCV, capable of real-time face recognition using a webcam.</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/Face_Recognition_Model">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Brute Force Camera</h3>
+          <p>A Python application conducting a quiz and capturing user images in the background, uploading them to a database.</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="https://github.com/Arya182-ui/Brute_force_camera">GitHub</a> 
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded-lg shadow-lg transform hover:rotate-3 hover:scale-105 transition-transform">
+          <h3 class="text-xl mb-2">Arya An very Smart Assistant</h3>
+          <p>A Python With Multi funcunilty</p>
+          <div class="mt-4">
+            <a class="text-green-500 hover:text-red-500" href="#">GitHub (Comming Soon)</a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Ethical Hacking Timeline -->
+  <section class="py-20 bg-black text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl mb-8">Experience & Achievements</h2>
+      <div class="relative">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img alt="Binary code running in the background" class="w-full h-full object-cover opacity-25" height="1080" src="./assets/images/img.jpg" width="1920"/>
+        </div>
+        <div class="relative z-10">
+          <div class="flex flex-col items-center">
+            <div class="mb-8">
+              <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl mb-2">Security Research Intern</h3>
+                <p>Conducted security research and vulnerability assessments</p>
+              </div>
+            </div>
+            <div class="mb-8">
+              <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl mb-2">BTech in Progress</h3>
+                <p>Pursuing Bachelor of Technology.</p>
+              </div>
+            </div>
+            <div class="mb-8">
+              <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl mb-2">GitHub Projects</h3>
+                <p>Notable projects on GitHub.</p>
+              </div>
+            </div>
+            <div class="mb-8">
+              <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-xl mb-2">LinkedIn Recognition</h3>
+                <p>Recognized for contributions on LinkedIn.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Contact Section -->
+<section class="py-20 bg-black text-center" id="contact">
+  <div class="container mx-auto">
+    <h2 class="text-4xl mb-8 text-white">Let’s Secure Together</h2>
+    <div class="relative mb-10">
+      <img alt="A glowing world map with pulsing location markers" class="w-full h-full object-cover" height="1080" src="https://storage.googleapis.com/a1aa/image/4qXFZJRZsr4dDRx8QVcKezPGZ6NESiZkf0XClTnAvWfEDWRoA.jpg" width="1920"/>
+    </div>
+
+    <!-- Form -->
+    <form action="https://formspree.io/f/mjkkpkjw" class="bg-gray-800 p-6 rounded-lg shadow-lg inline-block" id="contact-form" method="POST">
+      <div id="alert" class="hidden text-center py-3 rounded-lg w-full mb-6"></div>
+      
+      <div class="mb-4">
+        <input class="bg-gray-700 text-green-500 p-2 rounded-lg w-full" name="name" placeholder="Name" type="text" required/>
+      </div>
+      
+      <div class="mb-4">
+        <input class="bg-gray-700 text-green-500 p-2 rounded-lg w-full" name="email" placeholder="Email" type="email" required/>
+      </div>
+      
+      <div class="mb-4">
+        <textarea class="bg-gray-700 text-green-500 p-2 rounded-lg w-full" name="message" placeholder="Message" required></textarea>
+      </div>
+      
+      <button class="neon-button" type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+<!-- JavaScript for Handling Form Submission -->
+<script>
+  // Wait for the DOM to load
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const alertDiv = document.getElementById("alert"); // The alert div below the form
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Clear previous alert message
+      alertDiv.textContent = "";
+      alertDiv.classList.remove("hidden", "bg-red-500", "bg-green-500");
+
+      const formData = new FormData(form);
+
+      try {
+        // Send form data to Formspree using Fetch API
+        const response = await fetch("https://formspree.io/f/mjkkpkjw", {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json",
+          },
+        });
+
+        if (response.ok) {
+          // Success: Display success message and reset the form
+          alertDiv.textContent = "Message sent successfully!";
+          alertDiv.classList.add("bg-green-500", "text-white");
+          form.reset(); // Clear form fields
+        } else {
+          // Error: Display error message
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
+        // Catch any errors and show an error message
+        alertDiv.textContent = "Something went wrong. Please try again.";
+        alertDiv.classList.add("bg-red-500", "text-white");
+      }
+
+      // Show the alert message
+      alertDiv.classList.remove("hidden");
+    });
+  });
+</script>
+
+<!-- Optional: CSS to Style Alert Messages -->
+<style>
+  .alert {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+  }
+
+  .alert.hidden {
+    display: none;
+  }
+</style>
+  <!-- Footer -->
+  <footer class="py-10 bg-black text-center">
+    <div class="container mx-auto">
+      <div class="mb-4">
+        <p class="text-green-500">Thank you for visiting Arya’s portfolio. System secured.</p>
+      </div>
+      <div class="flex justify-center space-x-4">
+        <a class="neon-icon" href="https://www.linkedin.com/in/ayush-gangwar-3b3526237/">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a class="neon-icon" href="https://twitter.com/arya119000/">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a class="neon-icon" href="https://twitter.com/arya119000/">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+        <a class="neon-icon" href="https://www.instagram.com/i_am_arya119/">
+          <i class="fab fa-instagram text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
