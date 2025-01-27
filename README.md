@@ -27,4 +27,24 @@ Welcome to my personal portfolio! This repository showcases my skills, projects,
    git clone https://github.com/Arya182-ui/Cybersecurty-Protfolio
    ```
 
+## Contributing
+We welcome contributions! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch (e.g., `feature/your-feature-name`).
+3. Make your changes and commit them.
+4. Push your branch to your forked repository.
+5. Open a pull request to the `master` branch of the original repository.
+
+Please make sure to follow our [code of conduct](link_to_code_of_conduct).
+
+## License
+This project is not licensed under any specific license.
+
+## Contact
+If you have any questions, feel free to reach out:
+
+- GitHub: [Arya182-ui](https://github.com/Arya182-ui)
+- Email: [arya119000@gmail.com]
+
    
